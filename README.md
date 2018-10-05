@@ -7,18 +7,20 @@
 Самый, как по мне, лучший вариант - подключение с использованием подмодулей git.
 В корне вашего проекта выполняем следующие команды:
 
-- Подключаем подмодуль git
+1. Подключаем подмодуль git
 
 ```bash
 git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config;
 ```
 
-- Инициализируем подмодуль и обновляем его
+2. Инициализируем подмодуль и обновляем его
+
 ```bash
 git submodule init && git submodule update;
 ```
 
-- Добавляем в .gitignore файлы настроек
+3. Добавляем в .gitignore файлы настроек
+
 ```
 sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore
 ```
