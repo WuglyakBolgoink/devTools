@@ -21,7 +21,7 @@ git submodule init && git submodule update;
 
 - Добавляем в .gitignore файлы настроек
 
-```
+```bash
 sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore
 ```
 
