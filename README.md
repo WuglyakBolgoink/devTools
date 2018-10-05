@@ -10,13 +10,13 @@
 - Подключаем подмодуль git
 
 ```bash
-git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config;
+git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config
 ```
 
 - Инициализируем подмодуль и обновляем его
 
 ```bash
-git submodule init && git submodule update;
+git submodule init && git submodule update
 ```
 
 - Добавляем в .gitignore файлы настроек
