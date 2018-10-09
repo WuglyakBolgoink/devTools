@@ -10,7 +10,7 @@
 - Подключаем подмодуль git
 
 ```bash
-git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git dotfiles
+git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config
 ```
 
 - Инициализируем подмодуль и обновляем его
@@ -22,7 +22,7 @@ git submodule init && git submodule update
 - Добавляем в .gitignore файлы настроек
 
 ```bash
-sed -i -e '$a\' .gitignore  && echo 'dotfiles/*' >> .gitignore
+sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore
 ```
 Теперь у Вас есть 2 пути :
 ### Путь 1, ручной ###
