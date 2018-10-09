@@ -92,6 +92,21 @@ sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore
 cd editor-config && git checkout master && git pull && cd ..
 ```
 
+## Для леньтяев - всё одной командой (@popadiuk) ##
+
+В корне проекта выполните следующее:
+
+```bash
+sh -c "git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config && \
+git submodule init && git submodule update && \
+sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore && \
+npm install --save-dev --save-exact prettier && \
+npm i -D pretty-quick husky && \
+cat package.json | jq '. + { "husky": {"hooks": {"pre-commit": "pretty-quick --staged"}} }' -M > package.bak && \
+cat package.bak > package.json && \
+rm -f package.bak"
+```
+
 # Полезные ссылки #
 
 - [bash-команды](https://git.ria.com/docker-compose/bu-auto-ria-devel/wikis/%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D1%8B%D0%B5-bash-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B)
