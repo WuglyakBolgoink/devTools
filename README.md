@@ -31,15 +31,15 @@ sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore
 
 ### Путь 2, автоформатирование ###
 Используйте Prettier. Файл конфига уже есть в подмодуле.
-- Установите Prettier 
+1. Установите Prettier 
     - в свой проект 
-        + (yarn)
+        + `yarn`
 
         ```bash
         yarn add prettier --dev --exact
         ```
         
-        + (npm)
+        + `npm`
         
         ```bash
         npm install --save-dev --save-exact prettier
@@ -47,32 +47,32 @@ sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore
         
     - или глобально
     
-        + (yarn)
+        + `yarn`
         
         ```bash
         yarn global add prettier
         ```
         
-        + (npm)
+        + `npm`
         
         ```bash
         npm install --global prettier
         ```
         
-- Установите Husky
-    + (yarn)
+2. Установите Husky
+    + `yarn`
     
     ```bash
     yarn add pretty-quick husky --dev
     ```
     
-    + (npm)
+    + `npm`
     
     ```bash
     npm i -D pretty-quick husky
     ```
     
-- Добавьте хук в `package.json` Вашего проекта
+3. Добавьте хук в `package.json` Вашего проекта
 
     ```json
     {
