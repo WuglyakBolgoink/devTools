@@ -86,6 +86,8 @@ sed -i -e '$a\' .gitignore  && echo 'dotfiles/*' >> .gitignore
     
 ## Обновление уже подключенных конфигов ##
 
+В корне проекта выполняем команду:
+
 ```bash
 cd editor-config && git checkout master && git pull && cd ..
 ```
