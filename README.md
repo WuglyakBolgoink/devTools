@@ -102,7 +102,7 @@ git submodule init && git submodule update && \
 sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore && \
 npm install --save-dev --save-exact prettier && \
 npm i -D pretty-quick husky && \
-cat package.json | jq '. + { "husky": {"hooks": {"pre-commit": "pretty-quick --staged"}} }' -M > package.bak && \
+cat package.json | jq '. + { \"husky\": {\"hooks\": {\"pre-commit\": \"pretty-quick --staged\"}} }' -M > package.bak && \
 cat package.bak > package.json && \
 rm -f package.bak"
 ```
