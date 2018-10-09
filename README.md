@@ -99,7 +99,7 @@ cd editor-config && git checkout master && git pull && cd ..
 ```bash
 sh -c "git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config && \
 git submodule init && git submodule update && \
-sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore && \
+sed -i -e '$a\\' .gitignore  && echo 'editor-config/*' >> .gitignore && \
 npm install --save-dev --save-exact prettier && \
 npm i -D pretty-quick husky && \
 cat package.json | jq '. + { \"husky\": {\"hooks\": {\"pre-commit\": \"pretty-quick --staged\"}} }' -M > package.bak && \
