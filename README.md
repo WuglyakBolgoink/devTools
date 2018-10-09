@@ -33,33 +33,47 @@ sed -i -e '$a\' .gitignore  && echo 'dotfiles/*' >> .gitignore
 Используйте Prettier. Файл конфига уже есть в подмодуле.
 - Установите Prettier 
     - в свой проект 
-        (yarn)
+        + (yarn)
+
         ```bash
         yarn add prettier --dev --exact
         ```
-        (npm)
+        
+        + (npm)
+        
         ```bash
         npm install --save-dev --save-exact prettier
         ```
+        
     - или глобально
-        (yarn)
+    
+        + (yarn)
+        
         ```bash
         yarn global add prettier
         ```
-        (npm)
+        
+        + (npm)
+        
         ```bash
         npm install --global prettier
         ```
+        
 - Установите Husky
-    (yarn)
+    + (yarn)
+    
     ```bash
     yarn add pretty-quick husky --dev
     ```
-    (npm)
+    
+    + (npm)
+    
     ```bash
     npm i -D pretty-quick husky
     ```
+    
 - Добавьте хук в `package.json` Вашего проекта
+
     ```json
     {
       "husky": {
@@ -69,6 +83,13 @@ sed -i -e '$a\' .gitignore  && echo 'dotfiles/*' >> .gitignore
       }
     }
     ```
+    
+## Обновление уже подключенных конфигов ##
+
+```bash
+cd editor-config && git checkout master && git pull && cd ..
+```
+
 # Полезные ссылки #
 
 - [bash-команды](https://git.ria.com/docker-compose/bu-auto-ria-devel/wikis/%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D1%8B%D0%B5-bash-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B)
