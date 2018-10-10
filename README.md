@@ -134,3 +134,4 @@ rm -f package.bak
 - [Плагин Prettier для шторма](https://github.com/JetBrains/intellij-plugins/tree/master/prettierJS)
 - [Настройка шторма для автоформатирования](https://prettier.io/docs/en/webstorm.html)
 - [Настройка конфига Prettier](https://prettier.io/docs/en/options.html)
+- [Удаление подмодуля](https://gist.github.com/myusuf3/7f645819ded92bda6677)
