@@ -1,0 +1,13 @@
+{
+  "name": "editor-config",
+  "version": "1.0.0",
+  "description": "Tools for code formatting",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://git.ria.com/node/editor-config.git"
+  },
+  "author": "kpolischuk",
+  "license": "ISC"
+}

@@ -1,0 +1,7 @@
+{
+  "hooks": {
+    "post-merge": "sh editor-config/scripts/postMerge.sh",
+    "pre-commit": "sh editor-config/scripts/preCommit.sh",
+    "post-commit": "sh editor-config/scripts/postCommit.sh"
+  }
+}
