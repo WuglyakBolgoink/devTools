@@ -1,14 +1,13 @@
 # Інструменти розробника #
 Цей репозиторій - збірка скриптів та конфігураційних файлів, які допоможуть дотримуватись єдиного стилю написання коду для проектів на `Node.js`, прийнятого в команді.
 
-[[_TOC_]]
 
 ## 1. Підключення до проекту ##
 Підключення реалізовано за допомогою Git-підмодулів.
 - підключаємо підмодуль
 
 ```bash
-[ "git submodule | grep editor-config" == 'null'] && git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config;
+[ "git submodule | grep editor-config" == 'null' ] && git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config;
 ```
 - ініціюємо підмодуль
 
@@ -18,13 +17,13 @@ git submodule init && git submodule update
 - додаємо файли в `.gitignore`
 
 ```bash
-["cat .gitignore | grep 'editor-config/'"] && sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore;
+[ "cat .gitignore | grep 'editor-config/'" ] && sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore;
 ```
 ### Однією командою ###
 ```bash
-[ "git submodule | grep editor-config" == 'null'] && git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config;\
+[ "git submodule | grep editor-config" == 'null' ] && git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config;\
 git submodule init && git submodule update;\
-["cat .gitignore | grep 'editor-config/'"] && sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore;
+[ "cat .gitignore | grep 'editor-config/'" ] && sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore;
 ```
 ## 2. Загальні інструменти ##
 Для автомитизації процесу, в проекті використовуються `git hooks`, для роботи з ними використовується npm модуль [husky](https://www.npmjs.com/package/husky)
@@ -42,7 +41,7 @@ ln -s editor-config/.huskyrc
 ### Однією командою ###
 
 ```bash
-npm i -D husky; ["ls -a | grep .huskyrc" == 'null'] && ln -s editor-config/.huskyrc
+npm i -D husky; [ "ls -a | grep .huskyrc" == 'null' ] && ln -s editor-config/.huskyrc
 ```
 ## 3. Автоматичне форматування коду ##
 
@@ -62,7 +61,7 @@ ln -s editor-config/.prettierrc
 ### Однією командою ###
 
 ```bash
-npm i -D -E prettier && npm i -D pretty-quick; ["ls -a | grep .prettierrc" == 'null'] && ln -s editor-config/.prettierrc
+npm i -D -E prettier && npm i -D pretty-quick; [ "ls -a | grep .prettierrc" == 'null' ] && ln -s editor-config/.prettierrc
 ```
 ### Налаштовуємо IDE (не обов'язково) ###
 - WebStorm
@@ -86,7 +85,7 @@ npm i -D -E prettier && npm i -D pretty-quick; ["ls -a | grep .prettierrc" == 'n
 
 - копіюємо команду:
 ```bash
-[ "git submodule | grep editor-config" == 'null'] && git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config;\
+[ "git submodule | grep editor-config" == 'null' ] && git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config;\
 git submodule init && git submodule update && sh editor-config/scripts/init.sh
 
 ```
