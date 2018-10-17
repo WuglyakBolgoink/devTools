@@ -109,14 +109,13 @@ cd editor-config && git checkout master && git pull && cd ..
 В корне проекта выполните следующее:
 
 ```bash
-git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config && \
-ln -s editor-config/.editorconfig && \
-git add .editorconfig && \
-git submodule init && git submodule update && \
-sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore && \
+[ "git submodule | grep editor-config" == 'null'] && git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config; \
+["ls -a | grep .editorconfig" == 'null'] && ln -s editor-config/.editorconfig && git add .editorconfig; \
+git submodule init && git submodule update; \
+["cat .gitignore | grep 'editor-config/'"] && sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore; \
 npm install --save-dev --save-exact prettier && \
-npm i -D pretty-quick husky && \
-cat package.json | jq '. + { "husky": {"hooks": {"pre-commit": "pretty-quick --staged --find-config-path ./editor-config --config ./editor-config/.prettierrc"}} }' -M > package.bak && \
+npm i -D pretty-quick husky; \
+[ "$(cat package.json | jq '.husky.hooks["pre-commit"]' -M)" == 'null' ] && cat package.json | jq '.husky.hooks |= . + {"pre-commit": "pretty-quick --staged --find-config-path ./editor-config --config ./editor-config/.prettierrc"}' -M > package.bak && \
 cat package.bak > package.json && \
 rm -f package.bak
 ```
