@@ -117,6 +117,9 @@ npm install --save-dev --save-exact prettier && \
 npm i -D pretty-quick husky; \
 [ "$(cat package.json | jq '.husky.hooks["pre-commit"]' -M)" == 'null' ] && cat package.json | jq '.husky.hooks |= . + {"pre-commit": "pretty-quick --staged --find-config-path ./editor-config --config ./editor-config/.prettierrc"}' -M > package.bak && \
 cat package.bak > package.json && \
+rm -f package.bak; \
+[ "$(cat package.json | jq '.husky.hooks["post-merge"]' -M)" == 'null' ] && cat package.json | jq '.husky.hooks |= . + {"post-merge": "git submodule init && git submodule update"}' -M > package.bak && \
+cat package.bak > package.json && \
 rm -f package.bak
 ```
 
