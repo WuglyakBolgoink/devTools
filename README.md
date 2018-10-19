@@ -16,13 +16,13 @@ git submodule init && git submodule update
 - додаємо файли в `.gitignore`
 
 ```bash
-[ ! $(grep -Fq editor-config .gitignore) ] && sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore;
+[ $(grep -c editor-config .gitignore) -eq "0" ] && sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore;
 ```
 ### Однією командою ###
 ```bash
 [ ! $(git submodule | grep -c editor-config) ] && git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config;\
 git submodule init && git submodule update;\
-[ ! $(grep -Fq editor-config .gitignore) ] && sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore;
+[ $(grep -c editor-config .gitignore) -eq "0" ] && sed -i -e '$a\' .gitignore  && echo 'editor-config/*' >> .gitignore;
 ```
 ## 2. Загальні інструменти ##
 Для автомитизації процесу, в проекті використовуються `git hooks`, для роботи з ними використовується npm модуль [husky](https://www.npmjs.com/package/husky)
