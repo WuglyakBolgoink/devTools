@@ -1,8 +1,12 @@
 # Інструменти розробника #
 Цей репозиторій - збірка скриптів та конфігураційних файлів, які допоможуть дотримуватись єдиного стилю написання коду для проектів на `Node.js`, прийнятого в команді.
 
+1. [Example](#example)
+2. [Example2](#example2)
+3. [Third Example](#third-example)
 
-## 1. Підключення до проекту ##
+
+## 1. Підключення до проекту #name=example ##
 Підключення реалізовано за допомогою Git-підмодулів.
 - підключаємо підмодуль
 
@@ -41,7 +45,7 @@ ln -s editor-config/.huskyrc
 ### Однією командою ###
 
 ```bash
-npm i -D husky; [ -h .huskyrc ] && ln -s editor-config/.huskyrc && git add .huckyrc
+npm i -D husky; [ ! -h .huskyrc ] && ln -s editor-config/.huskyrc && git add .huckyrc
 ```
 ## 3. Автоматичне форматування коду ##
 
@@ -61,7 +65,7 @@ ln -s editor-config/.prettierrc
 ### Однією командою ###
 
 ```bash
-npm i -D -E prettier && npm i -D pretty-quick; [ -h .prettierrc ] && ln -s editor-config/.prettierrc && git add .prettierrc
+npm i -D -E prettier && npm i -D pretty-quick; [ ! -h .prettierrc ] && ln -s editor-config/.prettierrc && git add .prettierrc
 ```
 ### Налаштовуємо IDE (не обов'язково) ###
 - WebStorm
