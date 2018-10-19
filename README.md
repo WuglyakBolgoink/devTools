@@ -1,17 +1,12 @@
 # Інструменти розробника #
 Цей репозиторій - збірка скриптів та конфігураційних файлів, які допоможуть дотримуватись єдиного стилю написання коду для проектів на `Node.js`, прийнятого в команді.
 
-1. [Example](#example)
-2. [Example2](#example2)
-3. [Third Example](#third-example)
-
-
 ## 1. Підключення до проекту #name=example ##
 Підключення реалізовано за допомогою Git-підмодулів.
 - підключаємо підмодуль
 
 ```bash
-[ ! $(git submodule | grep -c editor-config) ] && git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config;
+[ $(git submodule | grep -c editor-config) -eq "0" ] && git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config;
 ```
 - ініціюємо підмодуль
 
