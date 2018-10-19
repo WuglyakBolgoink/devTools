@@ -81,13 +81,21 @@ npm i -D -E prettier && npm i -D pretty-quick; [ -h .prettierrc ] && ln -s edito
 - При пуші потрібно не забути позначити пункти `Push Tags` та `Run Git Hooks`
     
     ![Скрин с WebStorm](https://git.ria.com:4455/docker-compose/bu-auto-ria-devel/raw/master/public/images/git_push_example_1.png)
+
+## Аналіз коду ##
+Будемо юзати `eslint`
+
+## Коміти, комітмеседжі ##
+Будемо юзати `commitizen`
+
+
+
 ## 5. Все разом (простий і правильний шлях) ##
 
 - копіюємо команду:
 ```bash
 [ ! $(git submodule | grep -c editor-config) ] && git submodule add https://master_www:3000gtnhjdbx@git.ria.com:4455/node/editor-config.git editor-config;\
 git submodule init && git submodule update && sh editor-config/scripts/init.sh
-
 ```
 - заходимо в проект
 - запускаємо скопійовану команду
